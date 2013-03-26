@@ -81,6 +81,7 @@ def square(x):
   return x*x
 ```
 
+
 Functions can be defined within other functions, and first-class functions are supported.
 
 ```python
