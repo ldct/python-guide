@@ -1,6 +1,10 @@
 ## Introduction
 
-Hi. This is a guide to python for programmers. We shall be using Python 3.
+Hi. This is a guide to Python 3.
+
+It is intended to be read by people who are already fluent in another programming language.
+
+I intend for it to be a hybrid between a manual and a tutorial. It will have as few forward dependencies as possible. It is not meant to be comprehensive, but will cover about 95% of the language that a working pythonista uses. However, we will try to be rigorous and keep the hand-wavingness found in introductory tutorials to a minimum.
 
 Some conventions - the ``>>>`` symbol means we type something directly into the interpreter, which generally echoes back the result (thus saving us from unnecessary ``print`` commands).
 
@@ -9,9 +13,11 @@ Some conventions - the ``>>>`` symbol means we type something directly into the 
 6
 ```
 
+Also, [doc: [link](http://docs.python.org/3/)] will be used to refer to the official python documentation.
+
 ## Numeric
 
-There are three built-in numeric types - ``int``, ``float`` and ``complex`` [Docs: [4.4 Numeric Types] (http://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)]
+There are three built-in numeric types - ``int``, ``float`` and ``complex`` [doc: [4.4 Numeric Types] (http://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)]. Complex numbers will not be covered here. 
 
 ```python
 >>> 1 + 2 + (3 * 4) 
@@ -34,7 +40,7 @@ The last two examples illustrate a general principles - ``int``s will upconvert 
 Lists
 ---
 
-Lists are one of the most commonly used data structures in python. 
+Lists are one of the most commonly used data structures in python.
 ```python
 l = [1,2,3]
 len(l)
