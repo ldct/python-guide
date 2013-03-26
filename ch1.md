@@ -72,8 +72,32 @@ Note that ``int`` rounds to zero while ``//`` rounds to negative infinity.
 
 This strange behaviour is needed to make the definition of the modulo operator ``%`` make sense.
 
-Lists
----
+## Functions
+
+Python reserves two keywords, ``def`` and ``return``, for functions. ``def`` starts a function definition, with the arguments listed in brackets
+
+```python
+def square(x):
+  return x*x
+```
+
+Functions can be defined within other functions, and first-class functions are supported.
+
+```python
+def compose(f,g):
+  def h(x):
+    return f(g(x))
+  return h
+  
+>>> compose(square,square)
+<function h at 0x100dc88>
+
+>>> compose(square,square)(2)
+16
+```
+
+
+## Lists
 
 Lists are one of the most commonly used data structures in python.
 
@@ -81,19 +105,26 @@ Lists are one of the most commonly used data structures in python.
 >>> l = [1,2,3,4]
 >>> len(l)
 4
->>>l[0]
+>>> l[0]
 1
 ```
 
 As can be seen, the standard ``l[i]`` notation is used to access the ith element of the list, with the head having index 0. However, python also extends this syntax, using ``l[i:j]`` to specify the sublist from ``i`` inclusive to ``j`` exclusive. If any of them are ommitted, the slice is continued until the end of the list.
 
 ```python
->>>l[1:3]
+>>> l[1:3]
 [2,3]
->>>l[1:]
+>>> l[1:]
 [2,3,4]
->>>l[:]
+>>> l[:]
 [1,2,3,4]
+```
+
+The `+` operator is used to concatenate lists
+
+```python
+>>> [1,2] + [3]
+[1,2,3]
 ```
 
 Command line arguments
