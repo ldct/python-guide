@@ -108,9 +108,13 @@ Lists are one of the most commonly used data structures in python.
 4
 >>> l[0]
 1
+>>> l[-1]
+4
 ```
 
-As can be seen, the standard ``l[i]`` notation is used to access the ith element of the list, with the head having index 0. However, python also extends this syntax, using ``l[i:j]`` to specify the sublist from ``i`` inclusive to ``j`` exclusive. If any of them are ommitted, the slice is continued until the end of the list.
+As can be seen, the standard ``l[i]`` notation is used to access the ith element of the list, with the head having index 0. Negative indices count from the back.
+
+However, python also extends this syntax, using ``l[i:j]`` to specify the sublist from ``i`` inclusive to ``j`` exclusive. If any of them are ommitted, the slice is continued until the end of the list.
 
 ```python
 >>> l[1:3]
@@ -121,6 +125,15 @@ As can be seen, the standard ``l[i]`` notation is used to access the ith element
 [1,2,3,4]
 ```
 
+The third argument is a step argument
+
+```python
+>>> l[::2]
+[1,3]
+>>> l[::-1]
+[4,3,2,1]
+```
+
 The `+` operator is used to concatenate lists
 
 ```python
@@ -128,8 +141,7 @@ The `+` operator is used to concatenate lists
 [1,2,3]
 ```
 
-Command line arguments
----
+## Command line arguments
 
 Python uses the the name ``argv`` to denote the list of program arguments. As there is a built-in ``len`` function, ``argc`` is not needed. ``argv`` must be imported from ``sys``:
 
