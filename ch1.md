@@ -67,18 +67,19 @@ The ``=`` operator, when the LHS is an identifier [doc: [identifiers](http://doc
 >>> s = l
 >>> s, l
 [1, 2, 3], [1, 2, 3]
+```
+
+now ``s`` and ``l`` bind the same object
+
+```python
 >>> l.append(4)
 >>> s, l
 [1, 2, 3, 4], [1, 2, 3, 4]
 ```
 
-Note that this is different from
+Note that this is different from if we did
 
 ```python
->>> l = [1, 2, 3]
->>> s = l
->>> s, l
-[1, 2, 3], [1, 2, 3]
 >>> l = l + [4]
 >>> s, l
 [1, 2, 3], [1, 2, 3, 4]
@@ -91,7 +92,7 @@ Since the later rebinds ``l`` while the former does not. Identifiers identify ob
 Types like ``int`` and ``string`` are immutable; you cannot change them. If we have
 
 ```python
->>> a = 3
+>>> a = "hello"
 >>> b = a
 ```
 
