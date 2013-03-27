@@ -141,6 +141,23 @@ The `+` operator is used to concatenate lists
 [1,2,3]
 ```
 
+## Mutability
+
+Lists are mutable
+
+```python
+l = [1,2,3]
+l[1] = 22
+>>> l
+[1,22,3]
+```
+
+numbers are not
+
+## Dicts
+
+While a list can be thought of as something indexed by ints, a dict can be indexed by any immutable type.
+
 ## Command line arguments
 
 Python uses the the name ``argv`` to denote the list of program arguments. As there is a built-in ``len`` function, ``argc`` is not needed. ``argv`` must be imported from ``sys``:
