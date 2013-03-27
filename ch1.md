@@ -15,6 +15,49 @@ Some conventions - the ``>>>`` symbol means we type something directly into the 
 
 Also, [doc: [link](http://docs.python.org/3/)] will be used to refer to the official python documentation.
 
+# Functional Programming in Python
+
+For this chapter, we will learn the subset of python that does not use any assignment or mutation. We shall just be evaluating expressions in python - but as anyone who has read SICP should know, this can be all you need.
+
+## Ints, Strings and Booleans
+
+```python
+>>> 1 + 2
+3
+>>> "abc" + "def"
+"abcdef"
+>>> 1 < 2
+True
+>>> True and False
+False
+```
+
+
+## Functions
+
+Python reserves two keywords, ``def`` and ``return``, for functions. ``def`` starts a function definition, with the arguments listed in brackets
+
+```python
+def square(x):
+  return x*x
+```
+
+
+Functions can be defined within other functions, and first-class functions are supported.
+
+```python
+def compose(f,g):
+  def h(x):
+    return f(g(x))
+  return h
+  
+>>> compose(square,square)
+<function h at 0x100dc88>
+
+>>> compose(square,square)(2)
+16
+```
+
 ## Numeric
 
 There are three built-in numeric types - ``int``, ``float`` and ``complex`` [doc: [4.4 Numeric Types] (http://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)]. Complex numbers will not be covered here. 
@@ -71,31 +114,6 @@ Note that ``int`` rounds to zero while ``//`` rounds to negative infinity.
 ```
 
 This strange behaviour is needed to make the definition of the modulo operator ``%`` make sense.
-
-## Functions
-
-Python reserves two keywords, ``def`` and ``return``, for functions. ``def`` starts a function definition, with the arguments listed in brackets
-
-```python
-def square(x):
-  return x*x
-```
-
-
-Functions can be defined within other functions, and first-class functions are supported.
-
-```python
-def compose(f,g):
-  def h(x):
-    return f(g(x))
-  return h
-  
->>> compose(square,square)
-<function h at 0x100dc88>
-
->>> compose(square,square)(2)
-16
-```
 
 
 ## Lists
