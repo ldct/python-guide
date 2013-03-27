@@ -141,9 +141,17 @@ The `+` operator is used to concatenate lists
 [1,2,3]
 ```
 
+## Strings
+
+```python
+>>> s = "abc"
+>>> len(s)
+3
+```
+
 ## Mutability
 
-Lists are mutable
+Python types are split between mutable and immutable types. Lists are mutable
 
 ```python
 l = [1,2,3]
@@ -152,11 +160,26 @@ l[1] = 22
 [1,22,3]
 ```
 
-numbers are not
+Tuples are not
+
+```python
+```
+
+
+Numbers, strings are immutable. When you do something like
+
+```python
+>>> a = 3
+>>> a = 4
+>>> a
+4
+```
+
+the value ``3`` is not changed; ``a`` just points at a different value now.
 
 ## Dicts
 
-While a list can be thought of as something indexed by ints, a dict can be indexed by any immutable type.
+While a list can be thought of as something indexed by ints, a dict can be indexed by any immutable type. This is because hashes are used internally, and if a mutable tyoe were used the value could change without the hash changing, making the dict inconsistent.
 
 ## Command line arguments
 
