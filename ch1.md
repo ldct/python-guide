@@ -58,6 +58,12 @@ def compose(f,g):
 16
 ```
 
+# The Object Model
+
+Mutable vs Immutable
+
+# Built-in Types
+
 ## Numeric
 
 There are three built-in numeric types - ``int``, ``float`` and ``complex`` [doc: [4.4 Numeric Types] (http://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)]. Complex numbers will not be covered here. 
