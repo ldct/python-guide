@@ -60,7 +60,42 @@ def compose(f,g):
 
 # The Object Model
 
-Mutable vs Immutable
+The ``=`` operator, when the LHS is an identifier [doc: [identifiers](http://docs.python.org/3/reference/lexical_analysis.html#identifiers)], binds the object on the right to the identifier; subsequent expressions will expand the RHS to the LHS.
+
+```python
+>>> l = [1, 2, 3]
+>>> s = l
+>>> s, l
+[1, 2, 3], [1, 2, 3]
+>>> l.append(4)
+>>> s, l
+[1, 2, 3, 4], [1, 2, 3, 4]
+```
+
+Note that this is different from
+
+```python
+>>> l = [1, 2, 3]
+>>> s = l
+>>> s, l
+[1, 2, 3], [1, 2, 3]
+>>> l = l + [4]
+>>> s, l
+[1, 2, 3], [1, 2, 3, 4]
+```
+
+Since the later rebinds ``l`` while the former does not. Identifiers identify objects.
+
+## Mutable
+
+Types like ``int`` and ``string`` are immutable; you cannot change them. If we have
+
+```python
+>>> a = 3
+>>> b = a
+```
+
+the value of ``a`` will always be ``3`` no matter what you do to ``b``.
 
 # Built-in Types
 
